@@ -2,18 +2,49 @@
 
 use feature qw/say/;
 
-my ($input_file1, $input_file2) = @ARGV;
+#my $text = "abcdefg hijklmn opqrst uvq xyz";
+#format STDOUT = 
+#first:^<<<<<
+#	$text
+#second:^<<<<<
+#	$text
+#third:^<<<<<<
+#	$text
+#.
+#write;
 
-my $output_file2 = $input_file2;
-$output_file2 =~ s/^/goup./;
+format EMPLOY =
+====================
+@<<<<<<<<<<<<<<< @<<
+$name $age
+@#####.##
+$salary
+====================
+.
 
-my @arr = split("/", $input_file1);
-pop @arr;
-my $input_dir = join("/", @arr);
-$input_dir = "/" . $input_dir;
-$input_file2 = $input_dir . "/" . $input_file2;
-pop @arr;
-push @arr, "output";
-my $out_dir = join("/", @arr);
-$out_dir = "/" . $out_dir;
+format EMPLOY_TOP =
+====================
+Name             age@<
+					$%
+====================
+.
+
+@n = ("job", "john", "jojjy");
+@a = (13, 344, 45);
+@s = (200, 2000, 230000);
+
+$~ = EMPLOY;
+$^ = EMPLOY_TOP;
+
+my $i = 0;
+for (@n) {
+	$name = $_;
+	$age = $a[$i];
+	$salary = $s[$i++];
+	write;
+	
+}
+
+
+
 
