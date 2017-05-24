@@ -1,0 +1,2 @@
+#Sample_name    Total_reads     Combined_reads  Uncombined_reads        Percent_combined(%)     Combined_base(bp)       Min_len(bp)     Max_len(bp)     Avg_len(bp)
+D17044323	97,623	72,318	25,305	74.08	30,243,757	224	439	418
